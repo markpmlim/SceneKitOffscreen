@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE2FE02F226C0894004CB162 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EE2FE02E226C0894004CB162 /* Shaders.metal */; };
+		EE5B6750226A72ED00B2F19D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5B674F226A72ED00B2F19D /* AppDelegate.swift */; };
+		EE5B6752226A72ED00B2F19D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5B6751226A72ED00B2F19D /* ViewController.swift */; };
+		EE5B6754226A72ED00B2F19D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE5B6753226A72ED00B2F19D /* Assets.xcassets */; };
+		EE5B6757226A72ED00B2F19D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5B6755226A72ED00B2F19D /* Main.storyboard */; };
+		EE5B6761226A734C00B2F19D /* passthru.fs in Resources */ = {isa = PBXBuildFile; fileRef = EE5B675D226A734C00B2F19D /* passthru.fs */; };
+		EE5B6762226A734C00B2F19D /* passthru.vs in Resources */ = {isa = PBXBuildFile; fileRef = EE5B675E226A734C00B2F19D /* passthru.vs */; };
+		EE5B6763226A734C00B2F19D /* renderTexture.fs in Resources */ = {isa = PBXBuildFile; fileRef = EE5B675F226A734C00B2F19D /* renderTexture.fs */; };
+		EE5B6764226A734C00B2F19D /* renderTexture.vs in Resources */ = {isa = PBXBuildFile; fileRef = EE5B6760226A734C00B2F19D /* renderTexture.vs */; };
+		EE5B6766226A735400B2F19D /* GLShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5B6765226A735400B2F19D /* GLShader.swift */; };
+		EE5B676E226A80A600B2F19D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5B676D226A80A600B2F19D /* AppDelegate.swift */; };
+		EE5B6770226A80A700B2F19D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5B676F226A80A700B2F19D /* ViewController.swift */; };
+		EE5B6772226A80A700B2F19D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE5B6771226A80A700B2F19D /* Assets.xcassets */; };
+		EE5B6775226A80A700B2F19D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5B6773226A80A700B2F19D /* Main.storyboard */; };
+		EE5B677C226A814F00B2F19D /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EE5B677B226A814F00B2F19D /* Shaders.metal */; };
+		EE5B6784226A828200B2F19D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5B6783226A828200B2F19D /* AppDelegate.swift */; };
+		EE5B6786226A828200B2F19D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5B6785226A828200B2F19D /* ViewController.swift */; };
+		EE5B6788226A828200B2F19D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE5B6787226A828200B2F19D /* Assets.xcassets */; };
+		EE5B678B226A828200B2F19D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5B6789226A828200B2F19D /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EE2FE02E226C0894004CB162 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = Shaders.metal; path = Shaders/Shaders.metal; sourceTree = "<group>"; };
+		EE5B6745226A719F00B2F19D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		EE5B674D226A72ED00B2F19D /* OGLTexture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OGLTexture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE5B674F226A72ED00B2F19D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE5B6751226A72ED00B2F19D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE5B6753226A72ED00B2F19D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE5B6756226A72ED00B2F19D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE5B6758226A72ED00B2F19D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE5B675D226A734C00B2F19D /* passthru.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = passthru.fs; path = Shaders/passthru.fs; sourceTree = "<group>"; };
+		EE5B675E226A734C00B2F19D /* passthru.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = passthru.vs; path = Shaders/passthru.vs; sourceTree = "<group>"; };
+		EE5B675F226A734C00B2F19D /* renderTexture.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = renderTexture.fs; path = Shaders/renderTexture.fs; sourceTree = "<group>"; };
+		EE5B6760226A734C00B2F19D /* renderTexture.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = renderTexture.vs; path = Shaders/renderTexture.vs; sourceTree = "<group>"; };
+		EE5B6765226A735400B2F19D /* GLShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLShader.swift; sourceTree = "<group>"; };
+		EE5B676B226A80A600B2F19D /* MetalTexture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalTexture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE5B676D226A80A600B2F19D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE5B676F226A80A700B2F19D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE5B6771226A80A700B2F19D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE5B6774226A80A700B2F19D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE5B6776226A80A700B2F19D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE5B677B226A814F00B2F19D /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = Shaders.metal; path = Shaders/Shaders.metal; sourceTree = "<group>"; };
+		EE5B6781226A828200B2F19D /* MetalTexture2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalTexture2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE5B6783226A828200B2F19D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE5B6785226A828200B2F19D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE5B6787226A828200B2F19D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE5B678A226A828200B2F19D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE5B678C226A828200B2F19D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE5B674A226A72ED00B2F19D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE5B6768226A80A600B2F19D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE5B677E226A828200B2F19D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE2FE02D226C088A004CB162 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				EE2FE02E226C0894004CB162 /* Shaders.metal */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
+		EE5B670D226A701800B2F19D = {
+			isa = PBXGroup;
+			children = (
+				EE5B674E226A72ED00B2F19D /* OGLTexture */,
+				EE5B676C226A80A600B2F19D /* MetalTexture */,
+				EE5B6782226A828200B2F19D /* MetalTexture2 */,
+				EE5B6717226A701800B2F19D /* Products */,
+				EE5B6744226A719F00B2F19D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EE5B6717226A701800B2F19D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE5B674D226A72ED00B2F19D /* OGLTexture.app */,
+				EE5B676B226A80A600B2F19D /* MetalTexture.app */,
+				EE5B6781226A828200B2F19D /* MetalTexture2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE5B6744226A719F00B2F19D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE5B6745226A719F00B2F19D /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE5B674E226A72ED00B2F19D /* OGLTexture */ = {
+			isa = PBXGroup;
+			children = (
+				EE5B675C226A733A00B2F19D /* Shaders */,
+				EE5B674F226A72ED00B2F19D /* AppDelegate.swift */,
+				EE5B6765226A735400B2F19D /* GLShader.swift */,
+				EE5B6751226A72ED00B2F19D /* ViewController.swift */,
+				EE5B6753226A72ED00B2F19D /* Assets.xcassets */,
+				EE5B6755226A72ED00B2F19D /* Main.storyboard */,
+				EE5B6758226A72ED00B2F19D /* Info.plist */,
+			);
+			path = OGLTexture;
+			sourceTree = "<group>";
+		};
+		EE5B675C226A733A00B2F19D /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				EE5B675D226A734C00B2F19D /* passthru.fs */,
+				EE5B675E226A734C00B2F19D /* passthru.vs */,
+				EE5B675F226A734C00B2F19D /* renderTexture.fs */,
+				EE5B6760226A734C00B2F19D /* renderTexture.vs */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
+		EE5B676C226A80A600B2F19D /* MetalTexture */ = {
+			isa = PBXGroup;
+			children = (
+				EE5B677A226A813D00B2F19D /* Shaders */,
+				EE5B676D226A80A600B2F19D /* AppDelegate.swift */,
+				EE5B676F226A80A700B2F19D /* ViewController.swift */,
+				EE5B6771226A80A700B2F19D /* Assets.xcassets */,
+				EE5B6773226A80A700B2F19D /* Main.storyboard */,
+				EE5B6776226A80A700B2F19D /* Info.plist */,
+			);
+			path = MetalTexture;
+			sourceTree = "<group>";
+		};
+		EE5B677A226A813D00B2F19D /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				EE5B677B226A814F00B2F19D /* Shaders.metal */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
+		EE5B6782226A828200B2F19D /* MetalTexture2 */ = {
+			isa = PBXGroup;
+			children = (
+				EE2FE02D226C088A004CB162 /* Shaders */,
+				EE5B6783226A828200B2F19D /* AppDelegate.swift */,
+				EE5B6785226A828200B2F19D /* ViewController.swift */,
+				EE5B6787226A828200B2F19D /* Assets.xcassets */,
+				EE5B6789226A828200B2F19D /* Main.storyboard */,
+				EE5B678C226A828200B2F19D /* Info.plist */,
+			);
+			path = MetalTexture2;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE5B674C226A72ED00B2F19D /* OGLTexture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE5B6759226A72ED00B2F19D /* Build configuration list for PBXNativeTarget "OGLTexture" */;
+			buildPhases = (
+				EE5B6749226A72ED00B2F19D /* Sources */,
+				EE5B674A226A72ED00B2F19D /* Frameworks */,
+				EE5B674B226A72ED00B2F19D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OGLTexture;
+			productName = OGLTexture;
+			productReference = EE5B674D226A72ED00B2F19D /* OGLTexture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE5B676A226A80A600B2F19D /* MetalTexture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE5B6779226A80A700B2F19D /* Build configuration list for PBXNativeTarget "MetalTexture" */;
+			buildPhases = (
+				EE5B6767226A80A600B2F19D /* Sources */,
+				EE5B6768226A80A600B2F19D /* Frameworks */,
+				EE5B6769226A80A600B2F19D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetalTexture;
+			productName = MetalTexture;
+			productReference = EE5B676B226A80A600B2F19D /* MetalTexture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE5B6780226A828200B2F19D /* MetalTexture2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE5B678D226A828200B2F19D /* Build configuration list for PBXNativeTarget "MetalTexture2" */;
+			buildPhases = (
+				EE5B677D226A828200B2F19D /* Sources */,
+				EE5B677E226A828200B2F19D /* Frameworks */,
+				EE5B677F226A828200B2F19D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetalTexture2;
+			productName = MetalTexture2;
+			productReference = EE5B6781226A828200B2F19D /* MetalTexture2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE5B670E226A701800B2F19D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "mark lim pak mun";
+				TargetAttributes = {
+					EE5B674C226A72ED00B2F19D = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					EE5B676A226A80A600B2F19D = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					EE5B6780226A828200B2F19D = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EE5B6711226A701800B2F19D /* Build configuration list for PBXProject "SceneKitOffscreen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE5B670D226A701800B2F19D;
+			productRefGroup = EE5B6717226A701800B2F19D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE5B674C226A72ED00B2F19D /* OGLTexture */,
+				EE5B676A226A80A600B2F19D /* MetalTexture */,
+				EE5B6780226A828200B2F19D /* MetalTexture2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE5B674B226A72ED00B2F19D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE5B6764226A734C00B2F19D /* renderTexture.vs in Resources */,
+				EE5B6763226A734C00B2F19D /* renderTexture.fs in Resources */,
+				EE5B6762226A734C00B2F19D /* passthru.vs in Resources */,
+				EE5B6754226A72ED00B2F19D /* Assets.xcassets in Resources */,
+				EE5B6757226A72ED00B2F19D /* Main.storyboard in Resources */,
+				EE5B6761226A734C00B2F19D /* passthru.fs in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE5B6769226A80A600B2F19D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE5B6772226A80A700B2F19D /* Assets.xcassets in Resources */,
+				EE5B6775226A80A700B2F19D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE5B677F226A828200B2F19D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE5B6788226A828200B2F19D /* Assets.xcassets in Resources */,
+				EE5B678B226A828200B2F19D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE5B6749226A72ED00B2F19D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE5B6752226A72ED00B2F19D /* ViewController.swift in Sources */,
+				EE5B6750226A72ED00B2F19D /* AppDelegate.swift in Sources */,
+				EE5B6766226A735400B2F19D /* GLShader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE5B6767226A80A600B2F19D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE5B677C226A814F00B2F19D /* Shaders.metal in Sources */,
+				EE5B6770226A80A700B2F19D /* ViewController.swift in Sources */,
+				EE5B676E226A80A600B2F19D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE5B677D226A828200B2F19D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE2FE02F226C0894004CB162 /* Shaders.metal in Sources */,
+				EE5B6786226A828200B2F19D /* ViewController.swift in Sources */,
+				EE5B6784226A828200B2F19D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EE5B6755226A72ED00B2F19D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE5B6756226A72ED00B2F19D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EE5B6773226A80A700B2F19D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE5B6774226A80A700B2F19D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EE5B6789226A828200B2F19D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE5B678A226A828200B2F19D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE5B6723226A701800B2F19D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EE5B6724226A701800B2F19D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		EE5B675A226A72ED00B2F19D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OGLTexture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.incrementalinnovation.OGLTexture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EE5B675B226A72ED00B2F19D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OGLTexture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.incrementalinnovation.OGLTexture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EE5B6777226A80A700B2F19D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MetalTexture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.incrementalinnovation.MetalTexture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EE5B6778226A80A700B2F19D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MetalTexture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.incrementalinnovation.MetalTexture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EE5B678E226A828200B2F19D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MetalTexture2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.incrementalinnovation.MetalTexture2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EE5B678F226A828200B2F19D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MetalTexture2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.incrementalinnovation.MetalTexture2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE5B6711226A701800B2F19D /* Build configuration list for PBXProject "SceneKitOffscreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE5B6723226A701800B2F19D /* Debug */,
+				EE5B6724226A701800B2F19D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE5B6759226A72ED00B2F19D /* Build configuration list for PBXNativeTarget "OGLTexture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE5B675A226A72ED00B2F19D /* Debug */,
+				EE5B675B226A72ED00B2F19D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE5B6779226A80A700B2F19D /* Build configuration list for PBXNativeTarget "MetalTexture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE5B6777226A80A700B2F19D /* Debug */,
+				EE5B6778226A80A700B2F19D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE5B678D226A828200B2F19D /* Build configuration list for PBXNativeTarget "MetalTexture2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE5B678E226A828200B2F19D /* Debug */,
+				EE5B678F226A828200B2F19D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE5B670E226A701800B2F19D /* Project object */;
+}
