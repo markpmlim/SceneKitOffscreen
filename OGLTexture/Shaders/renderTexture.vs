@@ -1,6 +1,6 @@
 #version 330 core
 
-out vec2 TexCoords;
+out vec2 TexCoords;         // unused
 
 void main(void)
 {

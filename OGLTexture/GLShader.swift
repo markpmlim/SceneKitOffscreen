@@ -66,7 +66,7 @@ class GLShader
         var cStringPtr = UnsafePointer<GLchar>(contents)
 		glShaderSource(shaderID, 1, &cStringPtr, &shaderStringLength)
 		glCompileShader(shaderID)
-		// But compiling can fail! If we have errors in our GLSL code, we can here and output any errors.
+		// But compiling can fail! If we have errors in our GLSL code, any errors can be output here.
 		var compileSuccess: GLint = 0
 		glGetShaderiv(shaderID, GLenum(GL_COMPILE_STATUS), &compileSuccess)
 		if (compileSuccess == GL_FALSE) {

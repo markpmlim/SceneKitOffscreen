@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  InterpolatedColour
+//  MetalTexture2
 //
-//  Created by Mark Lim Pak Mun on 31/03/2019.
+//  Created by Mark Lim Pak Mun on 19/04/2019.
 //  Copyright © 2019 Incremental Innovation. All rights reserved.
 //
 

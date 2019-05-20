@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  MetalTexture2
+//  MetalTexture
 //
-//  Created by mark lim pak mun on 20/04/2019.
-//  Copyright © 2019 mark lim pak mun. All rights reserved.
+//  Created by mark lim pak mun on 19/04/2019.
+//  Copyright © 2019 Incremental Innovation. All rights reserved.
 //
 
 import Cocoa

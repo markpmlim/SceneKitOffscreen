@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  MetalTexture2
+//  MetalTexture
 //
-//  Created by mark lim pak mun on 20/04/2019.
-//  Copyright © 2019 mark lim pak mun. All rights reserved.
+//  Created by mark lim pak mun on 19/04/2019.
+//  Copyright © 2019 Incremental Innovation. All rights reserved.
 //
 
 import Cocoa
@@ -134,7 +134,7 @@ class ViewController: NSViewController, SCNSceneRendererDelegate  {
         commandBuffer!.commit()
     }
 
-    // Only returning the MTKTexture object is necessary.
+    // Only returning the MTKTexture object is necessary. Much of the code below can be removed.
     // This texture object will be used as an attachment that acts as a rendering target.
     func setupTexture() {
         // Just fill it with a color although it's unnecessary.
@@ -185,6 +185,8 @@ class ViewController: NSViewController, SCNSceneRendererDelegate  {
         sceneView.allowsCameraControl = true
         sceneView.showsStatistics = true
         scene.background.contents = NSColor.gray
+        // Alternatively, we can dispense using a plane;
+        // just assign the "offscreenTexture" to the scene's background
     }
 }
 

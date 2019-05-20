@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  SceneKitDelegate
+//  OGLTexture
 //
 //  Created by mark lim pak mun on 19/04/2019.
 //  Copyright © 2019 Incremental Innovation. All rights reserved.
@@ -25,7 +25,7 @@ class ViewController: NSViewController, SCNSceneRendererDelegate {
     var resolutionLoc: GLint = 0
     var fboID: GLuint = 0                   // framebuffer object name (or id)
     var textureColorbuffer: GLuint = 0      // color attachment texture
-    var depthBuffer: GLuint = 0
+    var depthRenderBufferObject: GLuint = 0
     let textureWidth: GLsizei = 256
     let textureHeight: GLsizei = 256
 
@@ -80,7 +80,7 @@ class ViewController: NSViewController, SCNSceneRendererDelegate {
         //sceneView.openGLContext = glContext
     }
 
-    // This pair of shaders is for the offscreen renderer.
+    // This pair of shaders is used by the offscreen renderer.
     func loadShaders() {
         var shaderIDs = [GLuint]()
         var shaderID = shader.compileShader(filename: "renderTexture.vs",
@@ -97,21 +97,14 @@ class ViewController: NSViewController, SCNSceneRendererDelegate {
     func setupFrameBuffer() {
         // The geometry of the quad is embedded in the vertex shader.
         glGenVertexArrays(1, &quadVAO)
-        // Setup our offscreen framebuffer object.
+        // Setup our offscreen framebuffer object (FBO)
         glGenFramebuffers(1, &fboID)
+        // Make it the active framebuffer
         glBindFramebuffer(GLenum(GL_FRAMEBUFFER), fboID)
-        // Create the render buffer for depth
-        glGenRenderbuffers(1, &depthBuffer);
-        glBindRenderbuffer(GLenum(GL_RENDERBUFFER), depthBuffer)
-        glRenderbufferStorage(GLenum(GL_RENDERBUFFER),
-                              GLenum(GL_DEPTH_COMPONENT),
-                              textureWidth, textureHeight)
-
         // Now instantiate a texture object ...
         glActiveTexture(GLenum(GL_TEXTURE0))
         glGenTextures(1, &textureColorbuffer)
         glBindTexture(GLenum(GL_TEXTURE_2D), textureColorbuffer)
-        // Allocate memory for the texture object.
         glTexImage2D(GLenum(GL_TEXTURE_2D),
                      0,
                      GL_RGBA8,
@@ -119,25 +112,35 @@ class ViewController: NSViewController, SCNSceneRendererDelegate {
                      0,
                      GLenum(GL_RGBA),
                      GLenum(GL_UNSIGNED_BYTE),
-                     nil)
+                     nil)               // nil means allocate memory for the texture object.
+
         glTexParameterf(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_WRAP_S), GLfloat(GL_CLAMP_TO_EDGE))
         glTexParameterf(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_WRAP_T), GLfloat(GL_CLAMP_TO_EDGE))
         glTexParameterf(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_MAG_FILTER), GLfloat(GL_LINEAR))
         glTexParameterf(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_MIN_FILTER), GLfloat(GL_LINEAR))
 
-        // ... and attach it to the FBO so we can render to it
+        // ... and attach it to the FBO so we can write to the texture
+        // as if it were a normal color/depth/stencil buffer.
         glFramebufferTexture2D(GLenum(GL_FRAMEBUFFER),
                                GLenum(GL_COLOR_ATTACHMENT0),
                                GLenum(GL_TEXTURE_2D),
                                textureColorbuffer,
-                               0)
+                               0)           // mipmap level
 
-        // Attach the depth render buffer to the FBO as a depth attachment
+        // Create the render buffer for depth
+        // We will not be sampling its data.
+        glGenRenderbuffers(1, &depthRenderBufferObject);
+        glBindRenderbuffer(GLenum(GL_RENDERBUFFER), depthRenderBufferObject)
+        glRenderbufferStorage(GLenum(GL_RENDERBUFFER),
+                              GLenum(GL_DEPTH_COMPONENT),
+                              textureWidth, textureHeight)
+        
+        // Attach the depth render buffer object to the FBO as a depth attachment.
         // This might not be necessary.
         glFramebufferRenderbuffer(GLenum(GL_FRAMEBUFFER),
                                   GLenum(GL_DEPTH_ATTACHMENT),
                                   GLenum(GL_RENDERBUFFER),
-                                  depthBuffer)
+                                  depthRenderBufferObject)
 
         let status = glCheckFramebufferStatus(GLenum(GL_FRAMEBUFFER))
         if status != GLenum(GL_FRAMEBUFFER_COMPLETE) {
@@ -173,6 +176,7 @@ class ViewController: NSViewController, SCNSceneRendererDelegate {
         glDrawArrays(GLenum(GL_TRIANGLE_STRIP), 0, 4)
         glBindVertexArray(0)
         glUseProgram(0)
+        // Make the system default active
         glBindFramebuffer(GLenum(GL_FRAMEBUFFER), 0)
 
         sharedContext.update()
@@ -186,6 +190,10 @@ class ViewController: NSViewController, SCNSceneRendererDelegate {
         scene = SCNScene()
         sceneView.scene = scene
         let plane = SCNPlane(width: 1.0, height: 1.0)
+        plane.widthSegmentCount = 10
+        plane.heightSegmentCount = 10
+        SCNTransaction.flush()
+
         plane.firstMaterial?.isDoubleSided = true
         let planeNode = SCNNode(geometry: plane)
         scene.rootNode.addChildNode(planeNode)

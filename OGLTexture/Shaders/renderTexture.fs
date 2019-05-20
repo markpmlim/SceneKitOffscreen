@@ -2,7 +2,7 @@
 
 uniform vec2 resolution;    // dimensions of view port
 
-in vec2 TexCoords;
+in vec2 TexCoords;          // unused
 
 // output to color attachment0
 out vec4 fragmentColor;

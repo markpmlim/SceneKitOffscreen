@@ -26,6 +26,15 @@
 		EE5B6786226A828200B2F19D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5B6785226A828200B2F19D /* ViewController.swift */; };
 		EE5B6788226A828200B2F19D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE5B6787226A828200B2F19D /* Assets.xcassets */; };
 		EE5B678B226A828200B2F19D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5B6789226A828200B2F19D /* Main.storyboard */; };
+		EEBE0143228E3806004AC6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBE0142228E3806004AC6B7 /* AppDelegate.swift */; };
+		EEBE0145228E3806004AC6B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBE0144228E3806004AC6B7 /* ViewController.swift */; };
+		EEBE0147228E3806004AC6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEBE0146228E3806004AC6B7 /* Assets.xcassets */; };
+		EEBE014A228E3806004AC6B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEBE0148228E3806004AC6B7 /* Main.storyboard */; };
+		EEBE014F228E3852004AC6B7 /* GLShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5B6765226A735400B2F19D /* GLShader.swift */; };
+		EEBE0150228E3B23004AC6B7 /* passthru.fs in Resources */ = {isa = PBXBuildFile; fileRef = EE5B675D226A734C00B2F19D /* passthru.fs */; };
+		EEBE0151228E3B23004AC6B7 /* passthru.vs in Resources */ = {isa = PBXBuildFile; fileRef = EE5B675E226A734C00B2F19D /* passthru.vs */; };
+		EEBE0152228E3B23004AC6B7 /* renderTexture.fs in Resources */ = {isa = PBXBuildFile; fileRef = EE5B675F226A734C00B2F19D /* renderTexture.fs */; };
+		EEBE0153228E3B23004AC6B7 /* renderTexture.vs in Resources */ = {isa = PBXBuildFile; fileRef = EE5B6760226A734C00B2F19D /* renderTexture.vs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +64,12 @@
 		EE5B6787226A828200B2F19D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE5B678A226A828200B2F19D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE5B678C226A828200B2F19D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEBE0140228E3806004AC6B7 /* OGLImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OGLImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEBE0142228E3806004AC6B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EEBE0144228E3806004AC6B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EEBE0146228E3806004AC6B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEBE0149228E3806004AC6B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EEBE014B228E3806004AC6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +94,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EEBE013D228E3806004AC6B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -94,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				EE5B674E226A72ED00B2F19D /* OGLTexture */,
+				EEBE0141228E3806004AC6B7 /* OGLImage */,
 				EE5B676C226A80A600B2F19D /* MetalTexture */,
 				EE5B6782226A828200B2F19D /* MetalTexture2 */,
 				EE5B6717226A701800B2F19D /* Products */,
@@ -107,6 +130,7 @@
 				EE5B674D226A72ED00B2F19D /* OGLTexture.app */,
 				EE5B676B226A80A600B2F19D /* MetalTexture.app */,
 				EE5B6781226A828200B2F19D /* MetalTexture2.app */,
+				EEBE0140228E3806004AC6B7 /* OGLImage.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,6 +202,18 @@
 			path = MetalTexture2;
 			sourceTree = "<group>";
 		};
+		EEBE0141228E3806004AC6B7 /* OGLImage */ = {
+			isa = PBXGroup;
+			children = (
+				EEBE0142228E3806004AC6B7 /* AppDelegate.swift */,
+				EEBE0144228E3806004AC6B7 /* ViewController.swift */,
+				EEBE0146228E3806004AC6B7 /* Assets.xcassets */,
+				EEBE0148228E3806004AC6B7 /* Main.storyboard */,
+				EEBE014B228E3806004AC6B7 /* Info.plist */,
+			);
+			path = OGLImage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,6 +268,23 @@
 			productReference = EE5B6781226A828200B2F19D /* MetalTexture2.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EEBE013F228E3806004AC6B7 /* OGLImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEBE014E228E3806004AC6B7 /* Build configuration list for PBXNativeTarget "OGLImage" */;
+			buildPhases = (
+				EEBE013C228E3806004AC6B7 /* Sources */,
+				EEBE013D228E3806004AC6B7 /* Frameworks */,
+				EEBE013E228E3806004AC6B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OGLImage;
+			productName = OGLImage;
+			productReference = EEBE0140228E3806004AC6B7 /* OGLImage.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -254,6 +307,10 @@
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
+					EEBE013F228E3806004AC6B7 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = EE5B6711226A701800B2F19D /* Build configuration list for PBXProject "SceneKitOffscreen" */;
@@ -270,6 +327,7 @@
 			projectRoot = "";
 			targets = (
 				EE5B674C226A72ED00B2F19D /* OGLTexture */,
+				EEBE013F228E3806004AC6B7 /* OGLImage */,
 				EE5B676A226A80A600B2F19D /* MetalTexture */,
 				EE5B6780226A828200B2F19D /* MetalTexture2 */,
 			);
@@ -308,6 +366,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EEBE013E228E3806004AC6B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEBE0147228E3806004AC6B7 /* Assets.xcassets in Resources */,
+				EEBE014A228E3806004AC6B7 /* Main.storyboard in Resources */,
+				EEBE0150228E3B23004AC6B7 /* passthru.fs in Resources */,
+				EEBE0151228E3B23004AC6B7 /* passthru.vs in Resources */,
+				EEBE0152228E3B23004AC6B7 /* renderTexture.fs in Resources */,
+				EEBE0153228E3B23004AC6B7 /* renderTexture.vs in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -341,6 +412,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EEBE013C228E3806004AC6B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEBE0145228E3806004AC6B7 /* ViewController.swift in Sources */,
+				EEBE0143228E3806004AC6B7 /* AppDelegate.swift in Sources */,
+				EEBE014F228E3852004AC6B7 /* GLShader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -364,6 +445,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				EE5B678A226A828200B2F19D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EEBE0148228E3806004AC6B7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEBE0149228E3806004AC6B7 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -541,6 +630,34 @@
 			};
 			name = Release;
 		};
+		EEBE014C228E3806004AC6B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OGLImage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.incrementalinnovation.OGLImage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EEBE014D228E3806004AC6B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OGLImage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.incrementalinnovation.OGLImage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -579,6 +696,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EEBE014E228E3806004AC6B7 /* Build configuration list for PBXNativeTarget "OGLImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEBE014C228E3806004AC6B7 /* Debug */,
+				EEBE014D228E3806004AC6B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
